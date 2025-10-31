@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Modern Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header id="navbar">
+        <div class="container">
+            <h1 class="logo">Portfolio</h1>
+            <button class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="navigation">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="animated-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="typing-text">Hello, I'm <span class="highlight">Abid Mahmood</span></h2>
+                <p class="fade-in-up">I'm a Web and Android developer specializing in Dart, Flutter, HTML, CSS, JavaScript, and C++.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Renabid" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abid-mahmood-59351b395/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/AbidMahmood02" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M18.244 2H21l-6.49 7.41L22.5 22h-5.873l-4.59-6.003L6.7 22H4l6.957-7.943L1.5 2h6.003l4.147 5.48L18.244 2zm-1.031 18.3h1.574L8.86 3.7H7.207l2.54 3.41 7.466 10.89z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:mahmoodabid660@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="#projects" class="btn pulse">View Projects</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>I build high-quality Web and Android apps. My core stack includes Dart and Flutter for cross-platform apps, and HTML, CSS, and JavaScript for modern, responsive web experiences. I also work with C++ for performance-critical components.</p>
+                </div>
+                <div class="skills fade-in">
+                    <h3>Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <svg viewBox="0 0 256 256" aria-label="Dart logo" role="img">
+                                <defs>
+                                    <linearGradient id="dartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#01579B"/>
+                                        <stop offset="100%" stop-color="#00BFA5"/>
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#dartGrad)" d="M45 60l68-20 70 20 28 68-20 68-68 28-68-28-20-68z"/>
+                                <path fill="#40C4FF" opacity="0.85" d="M113 40l70 20 28 68-98-88z"/>
+                                <path fill="#00BFA5" opacity="0.9" d="M45 60l98 88-68 28-20-68z"/>
+                            </svg>
+                            <span>Dart</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-feather"></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-android"></i>
+                            <span>Android</span>
+                        </div>
+                        <div class="skill-item">
+                            <svg viewBox="0 0 256 256" aria-label="C++ logo" role="img">
+                                <polygon points="128,12 232,74 232,182 128,244 24,182 24,74" fill="#00599C"/>
+                                <polygon points="128,28 216,79 216,177 128,228 40,177 40,79" fill="#004482"/>
+                                <circle cx="112" cy="128" r="52" fill="#FFF"/>
+                                <circle cx="112" cy="128" r="36" fill="#00599C"/>
+                                <g fill="#FFF">
+                                    <rect x="156" y="112" width="40" height="12" rx="2"/>
+                                    <rect x="156" y="132" width="40" height="12" rx="2"/>
+                                </g>
+                            </svg>
+                            <span>C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Renabid/typing_sensei" target="_blank" rel="noopener" class="project-link" title="Open Repository"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Renabid/typing_sensei" target="_blank" rel="noopener" class="project-link" title="GitHub Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="https://github.com/Renabid/typing_sensei" target="_blank" rel="noopener">typing_sensei</a></h3>
+                        <p>Terminal typing practice app written in C.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">CLI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Renabid/Portfolio" target="_blank" rel="noopener" class="project-link" title="Open Repository"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Renabid/Portfolio" target="_blank" rel="noopener" class="project-link" title="GitHub Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="https://github.com/Renabid/Portfolio" target="_blank" rel="noopener">Portfolio</a></h3>
+                        <p>Simple and minimalistic portfolio for beginners.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Renabid/expense-tracker" target="_blank" rel="noopener" class="project-link" title="Open Repository"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Renabid/expense-tracker" target="_blank" rel="noopener" class="project-link" title="GitHub Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="https://github.com/Renabid/expense-tracker" target="_blank" rel="noopener">expense_tracker</a></h3>
+                        <p>Flutter Android app to track daily expenses with Dart.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:mahmoodabid660@gmail.com">mahmoodabid660@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:01631229215">01631229215</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+                <form id="contactForm" class="fade-in">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/Renabid" target="_blank" rel="noopener" class="footer-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abid-mahmood-59351b395/" target="_blank" rel="noopener" class="footer-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/AbidMahmood02" target="_blank" rel="noopener" class="footer-link" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M18.244 2H21l-6.49 7.41L22.5 22h-5.873l-4.59-6.003L6.7 22H4l6.957-7.943L1.5 2h6.003l4.147 5.48L18.244 2zm-1.031 18.3h1.574L8.86 3.7H7.207l2.54 3.41 7.466 10.89z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:mahmoodabid660@gmail.com" class="footer-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>&copy; 2025 Abid Mahmood. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
