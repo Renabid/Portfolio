@@ -6,12 +6,13 @@
 }
 
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #f093fb;
-    --text-color: #333;
-    --bg-color: #f8f9fa;
+    --primary-color: #4A7FA7;
+    --secondary-color: #1A3D63;
+    --accent-color: #B3CFE5;
+    --text-color: #0A1931;
+    --bg-color: #FCFAFD;
     --card-bg: #fff;
+    --dark-bg: #0A1931;
     --transition: all 0.3s ease;
 }
 
@@ -207,7 +208,7 @@ nav {
 }
 
 .highlight {
-    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    background: linear-gradient(45deg, var(--accent-color), #E8F4F8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -215,8 +216,8 @@ nav {
 }
 
 @keyframes glow {
-    from { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)); }
-    to { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); }
+    from { filter: drop-shadow(0 0 10px rgba(179, 207, 229, 0.5)); }
+    to { filter: drop-shadow(0 0 20px rgba(179, 207, 229, 0.8)); }
 }
 
 .hero-content p {
@@ -741,13 +742,13 @@ nav {
 
 .btn-submit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(74, 127, 167, 0.4);
 }
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
-    color: white;
+    background: var(--dark-bg);
+    color: var(--accent-color);
     padding: 40px 0;
     text-align: center;
 }
@@ -804,7 +805,7 @@ nav {
 
 .scroll-to-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(74, 127, 167, 0.4);
 }
 
 /* Responsive Design */

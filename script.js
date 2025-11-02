@@ -95,7 +95,7 @@ contactForm.addEventListener('submit', function(e) {
     // Reset button after 3 seconds
     setTimeout(() => {
         button.innerHTML = originalText;
-        button.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+        button.style.background = 'linear-gradient(135deg, #4A7FA7, #1A3D63)';
     }, 3000);
     
     // Show notification
@@ -125,7 +125,7 @@ function showNotification(message) {
         position: fixed;
         top: 100px;
         right: 20px;
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        background: linear-gradient(135deg, #4A7FA7, #1A3D63);
         color: white;
         padding: 20px 30px;
         border-radius: 10px;
@@ -170,7 +170,7 @@ document.querySelectorAll('.section').forEach(section => {
 document.querySelectorAll('.skill-item').forEach(item => {
     item.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) scale(1.05)';
-        this.style.boxShadow = '0 15px 40px rgba(102, 126, 234, 0.3)';
+        this.style.boxShadow = '0 15px 40px rgba(74, 127, 167, 0.3)';
     });
     
     item.addEventListener('mouseleave', function() {
