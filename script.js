@@ -24,11 +24,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Sticky Navigation on Scroll
+// Throttle function for better performance
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Sticky Navigation on Scroll (throttled for performance)
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
+const handleScroll = throttle(() => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
@@ -46,7 +59,9 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
-});
+}, 10);
+
+window.addEventListener('scroll', handleScroll, { passive: true });
 
 // Mobile Menu Toggle
 const mobileToggle = document.getElementById('mobileToggle');
@@ -146,24 +161,40 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Intersection Observer for Fade-in Animations
+// Enhanced Intersection Observer for Smooth Reveal Animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-            observer.unobserve(entry.target);
+            setTimeout(() => {
+                entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                entry.target.style.opacity = '1';
+            }, index * 100); // Stagger animation
+            revealObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
 // Observe all sections
 document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
+    section.style.opacity = '0';
+    revealObserver.observe(section);
+});
+
+// Observe project cards with stagger
+document.querySelectorAll('.project-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    revealObserver.observe(card);
+});
+
+// Observe skill items
+document.querySelectorAll('.skill-item').forEach((item, index) => {
+    item.style.opacity = '0';
+    revealObserver.observe(item);
 });
 
 // Skill Items Hover Effect
@@ -231,41 +262,49 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Parallax Effect on Hero Section
-window.addEventListener('scroll', () => {
+// Smooth parallax effect (throttled)
+const handleParallax = throttle(() => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero-section');
     const heroContent = document.querySelector('.hero-content');
     
     if (hero && heroContent) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroContent.style.opacity = 1 - (scrolled / 500);
+        const parallaxSpeed = 0.3;
+        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        heroContent.style.opacity = Math.max(0, 1 - (scrolled / 600));
+        heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
     }
-});
+}, 10);
 
-// Add Active State to Nav Links on Scroll
+window.addEventListener('scroll', handleParallax, { passive: true });
+
+// Enhanced Active State to Nav Links on Scroll (throttled)
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link:not(.cv-download)');
 
 function highlightActiveSection() {
     let current = '';
+    const scrollPosition = window.pageYOffset + 150;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            current = sectionId;
         }
     });
     
     navLinks.forEach(link => {
+        const href = link.getAttribute('href');
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        if (href === `#${current}` || (current === '' && href === '#home')) {
             link.classList.add('active');
         }
     });
 }
 
-window.addEventListener('scroll', highlightActiveSection);
+window.addEventListener('scroll', throttle(highlightActiveSection, 50), { passive: true });
 
 console.log('Portfolio loaded successfully!');
